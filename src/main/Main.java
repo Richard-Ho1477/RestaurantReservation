@@ -14,7 +14,7 @@ public class Main {
 
 		do{
 			do{
-				System.out.println("LaperAh");
+				System.out.println("\n\n\nLaperAh");
 				System.out.println("1. Employee");
 				System.out.println("2. Customer");
 				System.out.println("3. Edit Employee");
@@ -29,7 +29,7 @@ public class Main {
 			}while(user < 1 || user > 4);
 
 			do{
-				System.out.println("Pilih Cabang");
+				System.out.println("\n\n\nPilih Cabang");
 				System.out.println("1. Surabaya");
 				System.out.println("2. Bandung");
 				System.out.println("3. Jakarta");
