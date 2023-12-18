@@ -9,7 +9,6 @@ public class Main {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		Random rd = new Random();
 		int user = 0, cabang = 0;
 		boolean call = true;
 		String cabangS = "";

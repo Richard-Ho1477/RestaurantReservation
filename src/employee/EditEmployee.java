@@ -24,7 +24,7 @@ public class EditEmployee {
             }
             sc.nextLine();
         }while(input < 1 || input > 4);
-        if(input == 4) return;
+        if(input == 4) {sc.close();return;}
         switch (input) {
             case 1:{
                 do{	
@@ -58,6 +58,7 @@ public class EditEmployee {
             }
             case 2:{
                 // printEmployeeList(--);
+                ReadEmployee re = new ReadEmployee();
                 do{	
                     System.out.print("\nInput Employee ID [7 Characters]: ");
                     try {
@@ -66,10 +67,36 @@ public class EditEmployee {
                         System.out.println(e);
                         sc.nextLine();
                     }
-                }while(idInput.length() != 7);
+                    if(idInput.length() != 7) continue;
+                }while(re.findEmployee(idInput));
+                do{	
+                    System.out.print("\nInput New Employee Name [3 - 30 Characters]: ");
+                    try {
+                        nameInput = sc.nextLine();
+                    } catch (Exception e) {
+                        System.out.println(e);
+                        sc.nextLine();
+                    }
+                }while(nameInput.length() < 3 || nameInput.length() > 30);
+                do{	
+                    System.out.print("Input New Employee Cabang [Jakarta, Bandung, Bali, Surabaya, Samarinda, Padang]: ");
+                    try {
+                        cabangInput = sc.nextLine();
+                    } catch (Exception e) {
+                        System.out.println(e);
+                        sc.nextLine();
+                    }
+                }while(cabangInput.compareTo("Jakarta") != 0 && cabangInput.compareTo("Bandung") != 0 
+                && cabangInput.compareTo("Bali") != 0 && cabangInput.compareTo("Surabaya") != 0 
+                && cabangInput.compareTo("Samarinda") != 0 && cabangInput.compareTo("Padang") != 0);
+                UpdateEmployee ue = new UpdateEmployee();
+                ue.updateEmployee(idInput,nameInput,cabangInput);
+
                 break;
             }
             case 3:{
+                // printEmployeeList(--);
+                ReadEmployee re = new ReadEmployee();
                 do{	
                     System.out.print("\nInput Employee ID [7 Characters]: ");
                     try {
@@ -78,7 +105,8 @@ public class EditEmployee {
                         System.out.println(e);
                         sc.nextLine();
                     }
-                }while(idInput.length() != 7);
+                    if(idInput.length() != 7) continue;
+                }while(re.findEmployee(idInput));
                 DeleteEmployee de = new DeleteEmployee();
                 de.deleteEmployee(idInput);
             }
