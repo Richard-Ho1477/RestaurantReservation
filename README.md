@@ -1,5 +1,11 @@
 # RestaurantReservation
 
+KeishaNatasyaGhazali - 2602080895
+membuat main menu berisikan employee, customer, checkemployee, checkcustomer
+membuat class employee
+membuat class menu dan localmenu, specialmenu
+membuat validasi checkcustomer dan checkemployee
+
 try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			// Start connection
@@ -18,7 +24,7 @@ try {
 			System.out.println(e);
 		}
 
-        
+
 public static void getData(Connection con, String query) {
 		try {
 			// Select query
