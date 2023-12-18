@@ -1,7 +1,10 @@
 package page;
 
+import java.util.ArrayList;
 import java.util.Scanner;
-import view.ShowCustomerTable;
+
+import menu.Menu;
+import view.*;
 
 public class CustomerPage {
     public void customerPage(String cabang, String id) {
@@ -20,5 +23,21 @@ public class CustomerPage {
             }
             sc.nextLine();
         }while(input < 1 || input > totalTable);
+        ShowMenu sm = new ShowMenu();
+        ArrayList<Menu> menu = new ArrayList<>();
+        if(cabang.compareTo("Jakarta") == 0) {
+            menu = sm.showMenu("select * from menujakarta", cabang);
+        } else if(cabang.compareTo("Bandung") == 0) {
+            menu = sm.showMenu("select * from menubandung", cabang);
+        } else if(cabang.compareTo("Bali") == 0) {
+            menu = sm.showMenu("select * from menubali", cabang);
+        } else if(cabang.compareTo("Surabaya") == 0) {
+            menu = sm.showMenu("select * from menusurabaya", cabang);
+        } else if(cabang.compareTo("Samarinda") == 0) {
+            menu = sm.showMenu("select * from menusamarinda", cabang);
+        } else if(cabang.compareTo("Padang") == 0) {
+            menu = sm.showMenu("select * from menupadang", cabang);
+        }
+        sc.close();
     }
 }
