@@ -6,6 +6,11 @@ membuat class employee
 membuat class menu dan localmenu, specialmenu
 membuat validasi checkcustomer dan checkemployee
 
+Nelvina Patricia Kompoi - 2602051491
+Membuat object table & entity
+Membuat customer page, show customer table, & show table
+Bikin show menu
+
 try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			// Start connection
