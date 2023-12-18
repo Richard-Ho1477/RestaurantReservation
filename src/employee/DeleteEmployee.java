@@ -5,7 +5,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 
 public class DeleteEmployee {
-    public void deleteData(String id) {
+    public void deleteEmployee(String id) {
 		try {
             Class.forName("com.mysql.cj.jdbc.Driver");
 			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/restomanagement","root","");
