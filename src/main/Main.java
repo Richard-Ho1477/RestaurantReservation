@@ -2,8 +2,7 @@ package main;
 
 import java.util.*;
 
-import validation.CheckCustomer;
-import validation.CheckEmployee;
+import validation.*;
 
 public class Main {
 
@@ -12,7 +11,7 @@ public class Main {
 
 		int user = 0, cabang = 0;
 		boolean call = true;
-		String cabangS = "", input = "";
+		String cabangS = "";
 
 		do{
 			do{
@@ -59,9 +58,14 @@ public class Main {
 				else if(cabang == 6) cabangS = "Padang";
 				else continue;
 	
-				
-				if(user == 1) CheckEmployee.getEmployee();
-				else if(user == 2) CheckCustomer.getCustomer();
+				if(user == 1){
+					CheckEmployee ce = CheckEmployee.getEmployee();
+					ce.validateId(cabangS);
+				}
+				else if(user == 2){
+					CheckCustomer cc = CheckCustomer.getCustomer();
+					cc.validateId(cabangS);
+				}
 				else if(user == 3);
 				else if(user == 4);
 			}

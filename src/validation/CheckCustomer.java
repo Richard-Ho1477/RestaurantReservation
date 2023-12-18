@@ -21,7 +21,7 @@ public class CheckCustomer implements Validate{
         do{
             // printCustomerList(--);
             System.out.println("\nInput 0 to go back");
-            System.out.print("Input ID for vertification [10 Character]: ");
+            System.out.print("Input ID of Reservation [10 Character]: ");
             try {
                 input = sc.nextLine();
             } catch (Exception e) {
