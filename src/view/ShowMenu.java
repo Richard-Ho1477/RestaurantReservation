@@ -1,8 +1,6 @@
 package view;
 
 import java.sql.*;
-import java.util.ArrayList;
-import menu.*;
 
 public class ShowMenu {
     public void showMenu(String cabang) {

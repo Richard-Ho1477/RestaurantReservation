@@ -1,7 +1,7 @@
 package validation;
 import java.util.Scanner;
 
-import employee.GetEmployeeCabang;
+import get.GetEmployeeCabang;
 import page.EmployeePage;
 import view.ShowEmployee;
 
@@ -23,7 +23,7 @@ public class CheckEmployee implements Validate{
             }
             if(input.compareTo("0") == 0) return;
             if(input.length() != 5) continue;
-            cabangS = ge.employeeCabang(input);
+            cabangS = ge.getData(input, "select * from employeelist");
         }while(cabangS == null);
         EmployeePage ep = new EmployeePage();
         ep.employeePage(cabangS, sc);

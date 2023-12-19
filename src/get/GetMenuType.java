@@ -1,16 +1,18 @@
-package employee;
+package get;
 
 import java.sql.*;
 
-public class GetEmployeeCabang {
-    public String employeeCabang(String id) {
+public class GetMenuType {
+    public String getData(String name, String cabang) {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
 			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/restomanagement","root","");
             Statement stmt = con.createStatement();
-            ResultSet rs = stmt.executeQuery("select * from employeelist");
+            ResultSet rs = stmt.executeQuery("select * from menulist");
             while(rs.next()) {
-                if(id.compareTo(rs.getString("id")) == 0) return rs.getString("cabang");
+                if(rs.getString("story") != null) return "Special Menu";
+                else if(rs.getString("location") != null) return "Local Menu";
+                else return "Menu";
             }
             System.out.println("Invalid ID");
             return null;
