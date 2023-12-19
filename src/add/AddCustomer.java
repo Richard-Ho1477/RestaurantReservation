@@ -2,7 +2,7 @@ package add;
 
 import java.sql.*;
 
-public class AddCustomer implements Add{
+public class AddCustomer implements AddUser{
     public void addData(String id, String name, String cabang) {
 		try {
             Class.forName("com.mysql.cj.jdbc.Driver");

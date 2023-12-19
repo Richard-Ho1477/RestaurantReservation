@@ -1,16 +1,18 @@
-package employee;
+package edit;
 
 import java.util.Random;
 import java.util.Scanner;
 
 import add.AddEmployee;
+import employee.*;
+import find.FindEmployee;
 import view.ShowEmployee;
 
 public class EditEmployee {
     public void employeeEdit(Scanner sc){
 
         ShowEmployee se = new ShowEmployee();
-        ReadEmployee re = new ReadEmployee();
+        FindEmployee fe = new FindEmployee();
         Random rd = new Random();
 
         int input = 0;
@@ -62,7 +64,7 @@ public class EditEmployee {
                     do{
                         idInput = String.format("%c%d%d%dE", nameInput.toUpperCase().charAt(0)
                         , rd.nextInt(10),rd.nextInt(10),rd.nextInt(10));
-                    }while(!re.findEmployee(idInput));
+                    }while(!fe.findData(idInput));
                     
     
                     AddEmployee ae = new AddEmployee();
@@ -83,7 +85,8 @@ public class EditEmployee {
                             sc.nextLine();
                         }
                         if(idInput.length() != 5) continue;
-                    }while(re.findEmployee(idInput));
+                        if(!fe.findData(idInput)) System.out.println("Invalid ID");
+                    }while(fe.findData(idInput));
                     do{	
                         System.out.print("Input New Employee Name [3 - 20 Characters]: ");
                         try {
@@ -122,7 +125,8 @@ public class EditEmployee {
                             sc.nextLine();
                         }
                         if(idInput.length() != 5) continue;
-                    }while(re.findEmployee(idInput));
+                        if(!fe.findData(idInput)) System.out.println("Invalid ID");
+                    }while(fe.findData(idInput));
                     DeleteEmployee de = new DeleteEmployee();
                     de.deleteEmployee(idInput);
                     System.out.println("Press enter to continue...");

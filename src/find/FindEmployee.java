@@ -1,9 +1,9 @@
-package employee;
+package find;
 
 import java.sql.*;
 
-public class ReadEmployee {
-    public boolean findEmployee(String id) {
+public class FindEmployee implements FindUser{
+    public boolean findData(String id){
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
 			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/restomanagement","root","");
@@ -12,7 +12,6 @@ public class ReadEmployee {
             while(rs.next()) {
                 if(id.compareTo(rs.getString("id")) == 0) return false;
             }
-            System.out.println("Invalid ID");
             return true;
         } catch (Exception e) {
             System.out.println(e);

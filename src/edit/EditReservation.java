@@ -1,14 +1,15 @@
-package employeeFunction;
+package edit;
 
 import java.util.Random;
 import java.util.Scanner;
 
 import add.AddCustomer;
+import find.FindCustomer;
 
 public class EditReservation {
     public void addReservation(String cabang, Scanner sc){
         Random rd = new Random();
-
+        FindCustomer fc = new FindCustomer();
         String nameInput = "", tTypeInput = "", idInput = ""; 
         int nTable = 0, nPeople = 0, nMax = 0;
         do{
@@ -60,7 +61,7 @@ public class EditReservation {
             do{
                 idInput = String.format("%c%d%d%dE", nameInput.toUpperCase().charAt(0)
                 , rd.nextInt(10),rd.nextInt(10),rd.nextInt(10));
-            }while(!true);
+            }while(!fc.findData(idInput));
 
             AddCustomer ac = new AddCustomer();
             ac.addData(idInput, nameInput, cabang);

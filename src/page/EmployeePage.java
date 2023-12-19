@@ -2,7 +2,7 @@ package page;
 
 import java.util.Scanner;
 
-import employeeFunction.EditReservation;
+import edit.*;
 
 public class EmployeePage {
     public void employeePage(String cabang, Scanner sc){
