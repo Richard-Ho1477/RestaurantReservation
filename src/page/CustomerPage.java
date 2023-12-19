@@ -1,25 +1,24 @@
 package page;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
 import find.FindMenu;
-import menu.Menu;
+import get.GetTableType;
+import update.UpdateTable;
 import view.*;
 
 public class CustomerPage {
     public void customerPage(String cabang, String id, Scanner sc) {
-        ShowCustomerTable ct = new ShowCustomerTable();
+        ShowTable st = new ShowTable();
         ShowMenu sm = new ShowMenu();
         FindMenu fm = new FindMenu();
         int input = 0;
         int totalTable = 0;
-        String orderInput = "";
-        String order = "";
+        String orderInput = "", order = "", type = "";
 
         do {
             System.out.println("\n\n\nYour Table");
-            totalTable = ct.customerTable(id);
+            totalTable = st.showTable(id);
             System.out.print("\nTable to order: ");
             try {
                 input = sc.nextInt();
@@ -28,6 +27,8 @@ public class CustomerPage {
             }
             sc.nextLine();
         }while(input < 1 || input > totalTable);
+        GetTableType gt = new GetTableType();
+        type = gt.getData(id, String.valueOf(totalTable));
 
         do {
             sm.showMenu(cabang);
@@ -45,6 +46,10 @@ public class CustomerPage {
             order = order.concat(", "+orderInput);
         } while(true);
 
-        
+        UpdateTable ut = new UpdateTable();
+        ut.updateData(id, orderInput, "IN ORDER", type);
+        System.out.println("Press enter to continue...");
+        sc.nextLine();
+
     }
 }

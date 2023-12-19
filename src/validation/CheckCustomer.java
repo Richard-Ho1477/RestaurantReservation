@@ -3,12 +3,8 @@ package validation;
 import java.util.Scanner;
 
 import get.GetCustomerCabang;
-import get.GetEmployeeCabang;
 import page.CustomerPage;
-import page.EmployeePage;
 import view.ShowCustomer;
-import view.ShowCustomerTable;
-import view.ShowEmployee;
 
 public class CheckCustomer implements Validate{
 

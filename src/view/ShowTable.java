@@ -3,19 +3,22 @@ package view;
 import java.sql.*;
 
 public class ShowTable {
-    public int showTable(Connection con, String query, String type, String id, int i) {
+    public int showTable(String id) {
+		int i = 0;
         try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/restomanagement","root","");
 			Statement stmt = con.createStatement();
-			ResultSet rs = stmt.executeQuery(query);
+			ResultSet rs = stmt.executeQuery("select * from tablelist");
 			while(rs.next()) {
-				if(id.compareTo(rs.getString(id)) == 0) {
+				if(id.compareTo(rs.getString("id")) == 0 && rs.getString("status").compareTo("IN RESERVE") == 0) {
                     i++;
-                    System.out.println(i+". "+type);
+                    System.out.println(i+". "+rs.getString("type"));
                 }
 			}
 		} catch (Exception e) {
 			System.out.println(e);
 	    }
-        return i;
+		return i;
     }
 }

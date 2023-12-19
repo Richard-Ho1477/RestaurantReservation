@@ -2,19 +2,18 @@ package get;
 
 import java.sql.*;
 
-public class GetMenuType {
-    public String getData(String name, String cabang) {
+public class GetTableType {
+    public String getData(String id, String index) {
+        int i = Integer.valueOf(index);
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
 			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/restomanagement","root","");
             Statement stmt = con.createStatement();
-            ResultSet rs = stmt.executeQuery("select * from menulist");
+            ResultSet rs = stmt.executeQuery("select * from tablelist");
             while(rs.next()) {
-                if(rs.getString("story") != null) return "Special Menu";
-                else if(rs.getString("location") != null) return "Local Menu";
-                else return "Menu";
+                if(id.compareTo(rs.getString("id")) == 0 && rs.getString("status").compareTo("IN RESERVE") == 0) i--;
+                if(i == 0) return rs.getString("type");
             }
-            System.out.println("Invalid Name");
             return null;
         } catch (Exception e) {
             System.out.println(e);

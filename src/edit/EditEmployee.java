@@ -6,6 +6,7 @@ import java.util.Scanner;
 import add.AddEmployee;
 import employee.*;
 import find.FindEmployee;
+import update.UpdateEmployee;
 import view.ShowEmployee;
 
 public class EditEmployee {
@@ -107,7 +108,7 @@ public class EditEmployee {
                     && cabangInput.compareTo("Bali") != 0 && cabangInput.compareTo("Surabaya") != 0 
                     && cabangInput.compareTo("Samarinda") != 0 && cabangInput.compareTo("Padang") != 0);
                     UpdateEmployee ue = new UpdateEmployee();
-                    ue.updateEmployee(idInput,nameInput,cabangInput);
+                    ue.updateData(idInput,nameInput,cabangInput);
                     System.out.println("Press enter to continue...");
                     sc.nextLine();
                     break;

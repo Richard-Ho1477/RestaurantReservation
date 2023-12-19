@@ -9,7 +9,7 @@ public class AddTable implements Add{
 		try {
             Class.forName("com.mysql.cj.jdbc.Driver");
 			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/restomanagement","root","");
-			PreparedStatement pst = con.prepareStatement("insert into customerlist (id,type,status) values (?,?,?)");
+			PreparedStatement pst = con.prepareStatement("insert into tablelist (id,type,status) values (?,?,?)");
 			pst.setString(1, id);
 			pst.setString(2, type);
 			pst.setString(3, status);
