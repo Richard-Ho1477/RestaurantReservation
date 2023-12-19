@@ -19,7 +19,6 @@ public class EditEmployee {
         String cabangInput = "", nameInput = "", idInput = "";
 
         do{
-
             do{
                 System.out.println("\n\n\nChoose Option");
                 System.out.println("1. Add Employee");

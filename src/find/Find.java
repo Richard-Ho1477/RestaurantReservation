@@ -1,4 +1,4 @@
 package find;
-interface FindUser {
+interface Find {
     public boolean findData(String data, String query);
 }

@@ -67,6 +67,7 @@ public class EditReservation {
 
         AddCustomer ac = new AddCustomer();
         ac.addData(idInput, nameInput, cabang);
-
+        System.out.println("Press enter to continue...");
+        sc.nextLine();
     }
 }

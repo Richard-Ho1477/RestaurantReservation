@@ -2,7 +2,7 @@ package find;
 
 import java.sql.*;
 
-public class FindEmployee implements FindUser{
+public class FindEmployee implements Find{
     public boolean findData(String id, String query){
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
