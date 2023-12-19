@@ -2,6 +2,8 @@ package page;
 
 import java.util.Scanner;
 
+import customer.AddCustomer;
+
 public class EmployeePage {
     public void employeePage(String id, Scanner sc){
         int input = 0;
@@ -21,7 +23,8 @@ public class EmployeePage {
             }while(input < 1 || input > 4);
             switch (input){
                 case 1:{
-                    
+                    AddCustomer ac = new AddCustomer();
+                    ac.addCustomer();
                 }
                 case 2:{
 

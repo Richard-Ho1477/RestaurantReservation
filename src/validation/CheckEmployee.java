@@ -1,6 +1,7 @@
 package validation;
 import java.util.Scanner;
 
+import employee.GetEmployeeCabang;
 import employee.ReadEmployee;
 import page.EmployeePage;
 import view.ShowEmployee;
@@ -10,7 +11,8 @@ public class CheckEmployee implements Validate{
     public void validateId(String cabang, Scanner sc){
         ShowEmployee se = new ShowEmployee();
         ReadEmployee re = new ReadEmployee();
-        String input = "";
+        GetEmployeeCabang ge = new GetEmployeeCabang();
+        String input = "", cabangS = "";
         do{
             se.showEmployee();
             System.out.println("\n\n\nInput 0 to go back");
@@ -23,7 +25,8 @@ public class CheckEmployee implements Validate{
             }
             if(input.compareTo("0") == 0) return;
             if(input.length() != 5) continue;
-        }while(re.findEmployee(input));
+            cabangS = ge.employeeCabang(input);
+        }while(cabangS == null);
         EmployeePage ep = new EmployeePage();
         ep.employeePage(input, sc);
         return;
