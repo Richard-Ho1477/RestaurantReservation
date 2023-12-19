@@ -7,9 +7,9 @@ import menu.Menu;
 import view.*;
 
 public class CustomerPage {
-    public void customerPage(String cabang, String id) {
+    public void customerPage(String cabang, String id, Scanner sc) {
         ShowCustomerTable ct = new ShowCustomerTable();
-        Scanner sc = new Scanner(System.in);
+        ShowMenu sm = new ShowMenu();
         int input = 0;
         int totalTable;
         do {
@@ -23,6 +23,7 @@ public class CustomerPage {
             }
             sc.nextLine();
         }while(input < 1 || input > totalTable);
+       
         // ShowMenu sm = new ShowMenu();
         // ArrayList<Menu> menu = new ArrayList<>();
         // if(cabang.compareTo("Jakarta") == 0) {
@@ -38,6 +39,5 @@ public class CustomerPage {
         // } else if(cabang.compareTo("Padang") == 0) {
         //     menu = sm.showMenu("select * from menupadang", cabang);
         // }
-        sc.close();
     }
 }
