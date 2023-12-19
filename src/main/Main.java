@@ -16,10 +16,10 @@ public class Main {
 		do{
 			do{
 				System.out.println("\n\n\nLaperAh");
-				System.out.println("1. Employee");
-				System.out.println("2. Customer");
-				System.out.println("3. Edit Employee");
-				System.out.println("4. Edit Customer");
+				System.out.println("1. Employee Page");
+				System.out.println("2. Customer Page");
+				System.out.println("3. Edit Employee List");
+				System.out.println("4. Edit Customer List");
 				System.out.println("5. Exit");
 				System.out.print("Choose: ");
 				try {
@@ -30,8 +30,7 @@ public class Main {
 				sc.nextLine();
 			}while(user < 1 || user > 5);
 
-			if(user == 5) call = false;
-			else{
+			if(user == 1 || user == 2){
 				do{
 					System.out.println("\n\n\nPilih Cabang");
 					System.out.println("1. Bandung");
@@ -66,12 +65,13 @@ public class Main {
 					CheckCustomer cc = CheckCustomer.getCustomer();
 					cc.validateId(cabangS);
 				}
-				else if(user == 3){
-					EditEmployee ed = new EditEmployee();
-					ed.employeeEdit();
-				}
-				else if(user == 4);
 			}
+			else if(user == 3){
+				EditEmployee ed = new EditEmployee();
+				ed.employeeEdit(sc);
+			}
+			else if(user == 4);
+			else if(user == 5) call = false;
 		}while(call);
 
 		sc.close();

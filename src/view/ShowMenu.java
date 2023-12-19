@@ -9,7 +9,7 @@ public class ShowMenu {
         ArrayList<Menu> menu = new ArrayList<>();
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/grocerystore","root","");
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/restomanagement","root","");
             Statement stmt = con.createStatement();
 			ResultSet rs = stmt.executeQuery(query);
             int i = 0;
@@ -22,7 +22,7 @@ public class ShowMenu {
 			}
             con.close();
 		} catch (Exception e) {
-			e.printStackTrace();
+			System.out.println(e);
 		}
         return menu;
     }

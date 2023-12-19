@@ -28,7 +28,7 @@ public class CheckEmployee implements Validate{
                 sc.nextLine();
             }
             if(input.compareTo("0") == 0) return;
-        }while(input.length() != 7);
+        }while(input.length() != 5);
         // if(cabang.compareTo(--) == 0) return false;
         // else{
         //     return true;

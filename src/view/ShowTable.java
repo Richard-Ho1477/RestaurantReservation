@@ -14,7 +14,7 @@ public class ShowTable {
                 }
 			}
 		} catch (Exception e) {
-			e.printStackTrace();
+			System.out.println(e);
 	    }
         return i;
     }
