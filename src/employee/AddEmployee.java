@@ -1,8 +1,6 @@
 package employee;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
+import java.sql.*;
 
 public class AddEmployee {
     public void addEmployee(String id, String name, String cabang) {

@@ -3,6 +3,7 @@ package page;
 import java.util.Scanner;
 
 import customer.AddCustomer;
+import employeeFunction.EditReservation;
 
 public class EmployeePage {
     public void employeePage(String cabang, Scanner sc){
@@ -23,8 +24,8 @@ public class EmployeePage {
             }while(input < 1 || input > 4);
             switch (input){
                 case 1:{
-                    AddCustomer ac = new AddCustomer();
-                    ac.addCustomer(cabang);
+                    EditReservation er = new EditReservation();
+                    er.addReservation(cabang, sc);
                 }
                 case 2:{
 
