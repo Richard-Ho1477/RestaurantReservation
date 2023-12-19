@@ -12,6 +12,7 @@ public class ReadEmployee {
             while(rs.next()) {
                 if(id.compareTo(rs.getString("id")) == 0) return false;
             }
+            System.out.println("Invalid ID");
             return true;
         } catch (Exception e) {
             System.out.println(e);

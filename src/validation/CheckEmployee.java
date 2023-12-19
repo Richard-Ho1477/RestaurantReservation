@@ -1,26 +1,20 @@
 package validation;
 import java.util.Scanner;
 
+import employee.ReadEmployee;
+import page.EmployeePage;
+import view.ShowEmployee;
+
 public class CheckEmployee implements Validate{
 
-    private static CheckEmployee check_employee = null;
-    private String input;
-    private Scanner sc;
-
-    private CheckEmployee(){
-        sc = new Scanner(System.in);
-    }
-
-    public static synchronized CheckEmployee getEmployee(){
-        if (check_employee == null) check_employee = new CheckEmployee();
-        return check_employee;
-    }
-
-    public void validateId(String cabang){
+    public void validateId(String cabang, Scanner sc){
+        ShowEmployee se = new ShowEmployee();
+        ReadEmployee re = new ReadEmployee();
+        String input = "";
         do{
-            // printEmployeeList(--);
+            se.showEmployee();
             System.out.println("\n\n\nInput 0 to go back");
-            System.out.print("Input ID for vertification [10 Character]: ");
+            System.out.print("Input ID for vertification [5 Character]: ");
             try {
                 input = sc.nextLine();
             } catch (Exception e) {
@@ -28,12 +22,10 @@ public class CheckEmployee implements Validate{
                 sc.nextLine();
             }
             if(input.compareTo("0") == 0) return;
-        }while(input.length() != 5);
-        // if(cabang.compareTo(--) == 0) return false;
-        // else{
-        //     return true;
-        // }
-        sc.close();
+            if(input.length() != 5) continue;
+        }while(re.findEmployee(input));
+        EmployeePage ep = new EmployeePage();
+        ep.employeePage(input, sc);
         return;
     }
 }

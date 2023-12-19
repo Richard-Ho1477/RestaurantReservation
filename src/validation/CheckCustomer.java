@@ -4,20 +4,8 @@ import java.util.Scanner;
 
 public class CheckCustomer implements Validate{
 
-    private static CheckCustomer check_customer = null;
-    private String input;
-    private Scanner sc;
-
-    private CheckCustomer(){
-        sc = new Scanner(System.in);
-    }
-
-    public static synchronized CheckCustomer getCustomer(){
-        if (check_customer == null) check_customer = new CheckCustomer();
-        return check_customer;
-    }
-
-    public void validateId(String cabang){
+    public void validateId(String cabang, Scanner sc){
+        String input = "";
         do{
             // printCustomerList(--);
             System.out.println("\n\n\nInput 0 to go back");
