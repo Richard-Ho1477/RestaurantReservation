@@ -10,6 +10,9 @@ Nelvina Patricia Kompoi - 2602051491
 Membuat object table & entity
 Membuat customer page, show customer table, & show table
 Bikin show menu
+Menambahkan show customer
+Membuat input order
+Melengkapi customer page (update show table, update status, dan lain-lain)
 
 try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
