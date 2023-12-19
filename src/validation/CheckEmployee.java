@@ -2,7 +2,6 @@ package validation;
 import java.util.Scanner;
 
 import employee.GetEmployeeCabang;
-import employee.ReadEmployee;
 import page.EmployeePage;
 import view.ShowEmployee;
 
@@ -10,7 +9,6 @@ public class CheckEmployee implements Validate{
 
     public void validateId(String cabang, Scanner sc){
         ShowEmployee se = new ShowEmployee();
-        ReadEmployee re = new ReadEmployee();
         GetEmployeeCabang ge = new GetEmployeeCabang();
         String input = "", cabangS = "";
         do{
@@ -28,7 +26,7 @@ public class CheckEmployee implements Validate{
             cabangS = ge.employeeCabang(input);
         }while(cabangS == null);
         EmployeePage ep = new EmployeePage();
-        ep.employeePage(input, sc);
+        ep.employeePage(cabangS, sc);
         return;
     }
 }

@@ -1,7 +1,7 @@
 package customer;
 
 public class AddCustomer {
-    public void addCustomer(){
-        
+    public void addCustomer(String cabang){
+
     }
 }

@@ -5,7 +5,7 @@ import java.util.Scanner;
 import customer.AddCustomer;
 
 public class EmployeePage {
-    public void employeePage(String id, Scanner sc){
+    public void employeePage(String cabang, Scanner sc){
         int input = 0;
         do{
             do{
@@ -24,7 +24,7 @@ public class EmployeePage {
             switch (input){
                 case 1:{
                     AddCustomer ac = new AddCustomer();
-                    ac.addCustomer();
+                    ac.addCustomer(cabang);
                 }
                 case 2:{
 
