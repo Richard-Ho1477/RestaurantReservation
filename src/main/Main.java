@@ -58,12 +58,12 @@ public class Main {
 				else continue;
 	
 				if(user == 1){
-					CheckEmployee ce = CheckEmployee.getEmployee();
-					ce.validateId(cabangS);
+					CheckEmployee ce = new CheckEmployee();
+					ce.validateId(cabangS, sc);
 				}
 				else if(user == 2){
-					CheckCustomer cc = CheckCustomer.getCustomer();
-					cc.validateId(cabangS);
+					CheckCustomer cc = new CheckCustomer();
+					cc.validateId(cabangS, sc);
 				}
 			}
 			else if(user == 3){
