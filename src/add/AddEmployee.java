@@ -1,9 +1,9 @@
-package employee;
+package add;
 
 import java.sql.*;
 
-public class AddEmployee {
-    public void addEmployee(String id, String name, String cabang) {
+public class AddEmployee implements Add{
+    public void addData(String id, String name, String cabang) {
 		try {
             Class.forName("com.mysql.cj.jdbc.Driver");
 			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/restomanagement","root","");

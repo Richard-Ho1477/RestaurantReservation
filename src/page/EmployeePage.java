@@ -2,7 +2,6 @@ package page;
 
 import java.util.Scanner;
 
-import customer.AddCustomer;
 import employeeFunction.EditReservation;
 
 public class EmployeePage {

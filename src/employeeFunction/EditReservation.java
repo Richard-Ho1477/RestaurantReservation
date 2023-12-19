@@ -1,10 +1,16 @@
 package employeeFunction;
 
+import java.util.Random;
 import java.util.Scanner;
+
+import add.AddCustomer;
 
 public class EditReservation {
     public void addReservation(String cabang, Scanner sc){
-        String nameInput = "", tTypeInput = ""; int nTable = 0, nPeople = 0, nMax = 0;
+        Random rd = new Random();
+
+        String nameInput = "", tTypeInput = "", idInput = ""; 
+        int nTable = 0, nPeople = 0, nMax = 0;
         do{
             System.out.println("");
             do{
@@ -51,7 +57,14 @@ public class EditReservation {
                 }while(nPeople < 1 ||  nPeople > nMax);
                 // AddTable
             }
-            // addCustomer
+            do{
+                idInput = String.format("%c%d%d%dE", nameInput.toUpperCase().charAt(0)
+                , rd.nextInt(10),rd.nextInt(10),rd.nextInt(10));
+            }while(!true);
+
+            AddCustomer ac = new AddCustomer();
+            ac.addData(idInput, nameInput, cabang);
+
         }while(true);
 
     }

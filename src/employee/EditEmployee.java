@@ -3,6 +3,7 @@ package employee;
 import java.util.Random;
 import java.util.Scanner;
 
+import add.AddEmployee;
 import view.ShowEmployee;
 
 public class EditEmployee {
@@ -65,7 +66,7 @@ public class EditEmployee {
                     
     
                     AddEmployee ae = new AddEmployee();
-                    ae.addEmployee(idInput,nameInput,cabangInput);
+                    ae.addData(idInput,nameInput,cabangInput);
                     System.out.println("Press enter to continue...");
                     sc.nextLine();
                     break;
