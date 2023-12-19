@@ -3,12 +3,12 @@ package find;
 import java.sql.*;
 
 public class FindEmployee implements FindUser{
-    public boolean findData(String id){
+    public boolean findData(String id, String query){
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
 			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/restomanagement","root","");
             Statement stmt = con.createStatement();
-            ResultSet rs = stmt.executeQuery("select * from employeelist");
+            ResultSet rs = stmt.executeQuery(query);
             while(rs.next()) {
                 if(id.compareTo(rs.getString("id")) == 0) return false;
             }

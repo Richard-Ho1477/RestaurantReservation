@@ -13,7 +13,7 @@ public class EditReservation {
         FindCustomer fc = new FindCustomer();
         String nameInput = "", tTypeInput = "", idInput = "";
         int nTable = 0, nPeople = 0, nMax = 0;
-        
+
         System.out.println("");
         do{
             System.out.println("Input Reservation Name [3 - 20 Character]: ");
@@ -27,7 +27,7 @@ public class EditReservation {
         do{
             idInput = String.format("%c%d%d%dC", nameInput.toUpperCase().charAt(0)
             , rd.nextInt(10),rd.nextInt(10),rd.nextInt(10));
-        }while(!fc.findData(idInput));
+        }while(!fc.findData(idInput, "select * from customerlist"));
         do{
             System.out.println("Input Table Amount [1 - 5 Table]: ");
             try {

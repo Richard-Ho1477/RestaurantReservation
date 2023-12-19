@@ -27,7 +27,8 @@ public class EmployeePage {
                     er.addReservation(cabang, sc);
                 }
                 case 2:{
-
+                    EditMenu em = new EditMenu();
+                    em.menuEdit(cabang, sc);
                 }
                 case 3:{
 
