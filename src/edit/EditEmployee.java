@@ -4,7 +4,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 import add.AddEmployee;
-import employee.*;
+import delete.DeleteEmployee;
 import find.FindEmployee;
 import update.UpdateEmployee;
 import view.ShowEmployee;
@@ -128,7 +128,7 @@ public class EditEmployee {
                         if(!fe.findData(idInput, "select * from employeelist")) System.out.println("Invalid ID");
                     }while(fe.findData(idInput, "select * from employeelist"));
                     DeleteEmployee de = new DeleteEmployee();
-                    de.deleteEmployee(idInput);
+                    de.deleteData(idInput);
                     System.out.println("Press enter to continue...");
                     sc.nextLine();
                     break;

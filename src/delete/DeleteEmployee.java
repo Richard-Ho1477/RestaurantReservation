@@ -1,11 +1,9 @@
-package employee;
+package delete;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
+import java.sql.*;
 
-public class DeleteEmployee {
-    public void deleteEmployee(String id) {
+public class DeleteEmployee implements Delete{
+    public void deleteData(String id){
 		try {
             Class.forName("com.mysql.cj.jdbc.Driver");
 			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/restomanagement","root","");

@@ -3,6 +3,7 @@ package edit;
 import java.util.Scanner;
 
 import add.AddMenu;
+import delete.DeleteMenu;
 import find.FindMenu;
 import get.GetMenuType;
 import update.UpdateMenu;
@@ -113,7 +114,7 @@ public class EditMenu {
                 case 2:{
                     sm.showMenu(cabang);
                     do{	
-                        System.out.print("Enter Menu Name: ");
+                        System.out.print("Enter Menu Name To Update: ");
                         try {
                             nameInput = sc.nextLine();
                         } catch (Exception e) {
@@ -209,8 +210,20 @@ public class EditMenu {
                     break;
                 }
                 case 3:{
-
-                    
+                    sm.showMenu(cabang);
+                    do{	
+                        System.out.print("Enter Menu Name To Delete: ");
+                        try {
+                            nameInput = sc.nextLine();
+                        } catch (Exception e) {
+                            System.out.println(e);
+                            sc.nextLine();
+                        }
+                    }while(fm.findData(nameInput, cabang));
+                    DeleteMenu dm = new DeleteMenu();
+                    dm.deleteData(nameInput, cabang);
+                    System.out.println("Press enter to continue...");
+                    sc.nextLine();
                     break;
                 }
             }
