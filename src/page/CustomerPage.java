@@ -18,7 +18,7 @@ public class CustomerPage {
 
         do {
             System.out.println("\n\n\nYour Table");
-            totalTable = st.showTable(id);
+            totalTable = st.showTable(id, "IN RESERVE");
             System.out.print("\nTable to order: ");
             try {
                 input = sc.nextInt();

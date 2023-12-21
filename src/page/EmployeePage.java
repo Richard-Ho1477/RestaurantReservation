@@ -31,7 +31,8 @@ public class EmployeePage {
                     em.menuEdit(cabang, sc);
                 }
                 case 3:{
-                    
+                    EditCheckOut ec = new EditCheckOut();
+                    ec.checkOutEdit(cabang, sc);
                 }
                 case 4:{
                     return;

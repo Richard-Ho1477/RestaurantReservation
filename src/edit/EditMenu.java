@@ -34,6 +34,7 @@ public class EditMenu {
             }while(input < 1 || input > 4);
     
             if(input == 4) return;
+            
             switch (input) {
                 case 1:{
                     System.out.println("");

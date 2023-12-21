@@ -4,7 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 
-public class UpdateEmployee {
+public class UpdateEmployee implements Update{
     public void updateData(String id, String name, String cabang) {
 		try {
             Class.forName("com.mysql.cj.jdbc.Driver");
