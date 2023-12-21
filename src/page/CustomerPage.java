@@ -28,7 +28,7 @@ public class CustomerPage {
             sc.nextLine();
         }while(input < 1 || input > totalTable);
         GetTableType gt = new GetTableType();
-        type = gt.getData(id, String.valueOf(totalTable));
+        type = gt.getData(id, String.valueOf(totalTable), "IN RESERVE");
 
         do {
             sm.showMenu(cabang);
@@ -43,7 +43,7 @@ public class CustomerPage {
                 if(orderInput.compareTo("0") == 0) break;
             } while(!fm.findData(orderInput, cabang));
             if(orderInput.compareTo("0") == 0) break;
-            order = order.concat(", "+orderInput);
+            order = order.concat(","+orderInput);
         } while(true);
 
         UpdateTable ut = new UpdateTable();

@@ -3,7 +3,7 @@ package get;
 import java.sql.*;
 
 public class GetTableType {
-    public String getData(String id, String index) {
+    public String getData(String id, String index, String status) {
         int i = Integer.valueOf(index);
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -11,7 +11,7 @@ public class GetTableType {
             Statement stmt = con.createStatement();
             ResultSet rs = stmt.executeQuery("select * from tablelist");
             while(rs.next()) {
-                if(id.compareTo(rs.getString("id")) == 0 && rs.getString("status").compareTo("IN RESERVE") == 0) i--;
+                if(id.compareTo(rs.getString("id")) == 0 && rs.getString("status").compareTo(status) == 0) i--;
                 if(i == 0) return rs.getString("type");
             }
             return null;

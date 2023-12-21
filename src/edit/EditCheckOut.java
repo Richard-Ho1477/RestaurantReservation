@@ -5,8 +5,7 @@ import java.util.Scanner;
 import get.GetCustomerCabang;
 import get.GetTableType;
 import update.UpdateStatus;
-import view.ShowCustomer;
-import view.ShowTable;
+import view.*;
 
 public class EditCheckOut {
     public void checkOutEdit(String cabang, Scanner sc){
@@ -44,7 +43,7 @@ public class EditCheckOut {
             sc.nextLine();
         }while(input < 1 || input > totalTable);
         GetTableType gt = new GetTableType();
-        type = gt.getData(id, String.valueOf(totalTable));
+        type = gt.getData(id, String.valueOf(totalTable), "IN ORDER");
 
         UpdateStatus us = new UpdateStatus();
         us.updateData(id, "FINALIZED", type);
@@ -52,6 +51,8 @@ public class EditCheckOut {
         sc.nextLine();
 
         ShowBill sb = new ShowBill();
-        sb.showData(id,type);
+        sb.showBill(id,type,cabang);
+        System.out.println("Press enter to continue...");
+        sc.nextLine();
     }
 }
