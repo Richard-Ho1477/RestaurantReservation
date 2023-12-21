@@ -5,6 +5,7 @@ import java.util.Scanner;
 import add.AddMenu;
 import find.FindMenu;
 import get.GetMenuType;
+import update.UpdateMenu;
 import view.ShowMenu;
 
 public class EditMenu {
@@ -13,7 +14,7 @@ public class EditMenu {
         FindMenu fm = new FindMenu();
         GetMenuType gm = new GetMenuType();
         int input = 0, priceInput = 0, menuSelection = 0;
-        String nameInput = "", locationInput = "", characteristicInput = "", storyInput = "", confirm = "";
+        String nameInput = "", locationInput = "", characteristicInput = "", storyInput = "", confirm = "", oldName = "";
 
         do{
             do{
@@ -120,6 +121,7 @@ public class EditMenu {
                             sc.nextLine();
                         }
                     }while(fm.findData(nameInput, cabang));
+                    oldName = nameInput;
                     do{	
                         System.out.print("Input New Menu Name [3 - 30 Characters]: ");
                         try {
@@ -197,6 +199,17 @@ public class EditMenu {
                             }while(characteristicInput.length() < 5 || characteristicInput.length() > 100);
                         }
                     }
+
+                    UpdateMenu um = new UpdateMenu();
+                    if(menuType.compareTo("Special Menu") == 0 || menuType.compareTo("Local Menu") == 0) 
+                    um.updateData(nameInput, priceInput, storyInput, locationInput, characteristicInput, cabang, 2, oldName);
+                    else um.updateData(nameInput, priceInput, storyInput, locationInput, characteristicInput, cabang, 1, oldName);
+                    System.out.println("Press enter to continue...");
+                    sc.nextLine();
+                    break;
+                }
+                case 3:{
+
                     
                     break;
                 }
