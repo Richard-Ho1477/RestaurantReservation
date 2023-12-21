@@ -1,7 +1,5 @@
 package view;
 
-import java.sql.*;
-
 import get.GetOrder;
 import get.GetPrice;
 
