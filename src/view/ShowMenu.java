@@ -15,14 +15,12 @@ public class ShowMenu {
                     i++;
                     if(rs.getString("story") != null){
                         System.out.println(i + ". Menu Name: " + rs.getString("name") + ", Price: " + rs.getInt("price"));
-                        System.out.println("Story: ");
-                        System.out.println(rs.getString("story"));
+                        System.out.println("Story: "+ rs.getString("story"));
                     }
                     else if(rs.getString("location") != null){
                         System.out.println(i + ". Menu Name: " + rs.getString("name") + ", Price: " + rs.getInt("price")
                         + ", Location: " + rs.getString("location"));
-                        System.out.println("Characteristic: ");
-                        System.out.println(rs.getString("characteristic"));
+                        System.out.println("Characteristic: " + rs.getString("characteristic"));
                     }
                     else{
                         System.out.println(i + ". Menu Name: " + rs.getString("name") + ", Price: " + rs.getInt("price"));

@@ -26,14 +26,17 @@ public class EmployeePage {
                 case 1:{
                     EditMenu em = new EditMenu();
                     em.menuEdit(cabang, sc);
+                    break;
                 }
                 case 2:{
                     EditReservation er = new EditReservation();
                     er.addReservation(cabang, sc);
+                    break;
                 }
                 case 3:{
                     EditCheckOut ec = new EditCheckOut();
                     ec.checkOutEdit(cabang, sc);
+                    break;
                 }
                 case 4:{
                     return;

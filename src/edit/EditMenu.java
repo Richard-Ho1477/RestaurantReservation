@@ -59,8 +59,7 @@ public class EditMenu {
                             System.out.println(e);
                             sc.nextLine();
                         }
-                        if(nameInput.length() < 3 || nameInput.length() > 30) continue;
-                    }while(fm.findData(nameInput, cabang));
+                    }while(nameInput.length() < 3 || nameInput.length() > 30);
                     do{	
                         System.out.print("Input Menu Price [1-1000000]: ");
                         try {
@@ -132,8 +131,7 @@ public class EditMenu {
                             System.out.println(e);
                             sc.nextLine();
                         }
-                        if(nameInput.length() < 3 || nameInput.length() > 30) continue;
-                    }while(!fm.findData(nameInput, cabang));
+                    }while(nameInput.length() < 3 || nameInput.length() > 30);
                     do{	
                         System.out.print("Input New Menu Price [1-1000000]: ");
                         try {
@@ -144,11 +142,11 @@ public class EditMenu {
                         sc.nextLine();
                     }while(priceInput < 1 || priceInput > 1000000);
 
-                    String menuType = gm.getData(nameInput, cabang);
+                    String menuType = gm.getData(oldName, cabang);
                     
                     if(menuType.compareTo("Special Menu") == 0){
                         do{	
-                            System.out.print("Do you want to add story [y/n]? ");
+                            System.out.print("Do you want to change story [y/n]? ");
                             try {
                                 confirm = sc.nextLine();
                             } catch (Exception e) {
@@ -171,7 +169,7 @@ public class EditMenu {
                     }
                     else if(menuType.compareTo("Local Menu") == 0){
                         do{	
-                            System.out.print("Do you want to add location and characteristic [y/n]? ");
+                            System.out.print("Do you want to change location and characteristic [y/n]? ");
                             try {
                                 confirm = sc.nextLine();
                             } catch (Exception e) {

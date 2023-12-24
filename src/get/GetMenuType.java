@@ -10,9 +10,11 @@ public class GetMenuType implements Get{
             Statement stmt = con.createStatement();
             ResultSet rs = stmt.executeQuery("select * from menulist");
             while(rs.next()) {
-                if(rs.getString("story") != null) return "Special Menu";
-                else if(rs.getString("location") != null) return "Local Menu";
-                else return "Menu";
+                if(name.compareTo(rs.getString("name")) == 0 && cabang.compareTo(rs.getString("cabang")) == 0){
+                    if(rs.getString("story") != null) return "Special Menu";
+                    else if(rs.getString("location") != null) return "Local Menu";
+                    else return "Menu";
+                }
             }
             System.out.println("Invalid Name");
             return null;

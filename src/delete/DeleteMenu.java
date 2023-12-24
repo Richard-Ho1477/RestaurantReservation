@@ -9,7 +9,7 @@ public class DeleteMenu {
 		try {
             Class.forName("com.mysql.cj.jdbc.Driver");
 			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/restomanagement","root","");
-			PreparedStatement pst = con.prepareStatement("delete from employeelist where name = ? and cabang = ?");
+			PreparedStatement pst = con.prepareStatement("delete from menulist where name = ? and cabang = ?");
 			pst.setString(1, name);
 			pst.setString(2, cabang);
 			if(pst.executeUpdate() != 0) System.out.println("\nMenu data deleted");
