@@ -3,6 +3,7 @@ package edit;
 import java.util.Random;
 import java.util.Scanner;
 
+import List.EmployeeList;
 import add.AddEmployee;
 import delete.DeleteEmployee;
 import find.FindEmployee;
@@ -14,6 +15,7 @@ public class EditEmployee {
 
         ShowEmployee se = new ShowEmployee();
         FindEmployee fe = new FindEmployee();
+        EmployeeList el = new EmployeeList();
         Random rd = new Random();
 
         int input = 0;
@@ -74,8 +76,14 @@ public class EditEmployee {
                     break;
                 }
                 case 2:{
-                    se.showEmployee();
                     System.out.println("");
+                    if(el.listNull("-")){
+                        System.out.println("There is no Employee data");
+                        System.out.println("Press enter to continue...");
+                        sc.nextLine();
+                        break;
+                    }
+                    se.showEmployee("-");
                     do{	
                         System.out.print("Input Employee ID [5 Characters]: ");
                         try {
@@ -114,8 +122,14 @@ public class EditEmployee {
                     break;
                 }
                 case 3:{
-                    se.showEmployee();
                     System.out.println("");
+                    if(el.listNull("-")){
+                        System.out.println("There is no Employee data");
+                        System.out.println("Press enter to continue...");
+                        sc.nextLine();
+                        break;
+                    }
+                    se.showEmployee("-");
                     do{	
                         System.out.print("Input Employee ID [5 Characters]: ");
                         try {

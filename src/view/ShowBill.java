@@ -11,7 +11,7 @@ public class ShowBill {
         GetOrder go = new GetOrder();
         String order = go.getData(id, type);
         int limit = order.length() - order.replace(",", "").length();
-        String[] word = order.split(",",limit+1);
+        String[] word = order.split(",",limit);
 
         for (int i = 0; i < word.length; i++) {
             System.out.println(i + ". " + word[i] + " Price: " + gp.getData(word[i], cabang));

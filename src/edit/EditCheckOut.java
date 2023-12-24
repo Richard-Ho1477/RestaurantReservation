@@ -2,6 +2,7 @@ package edit;
 
 import java.util.Scanner;
 
+import List.CustomerList;
 import get.GetCustomerCabang;
 import get.GetTableType;
 import update.UpdateStatus;
@@ -13,11 +14,19 @@ public class EditCheckOut {
         String type = "", cabangC = "", id = "";
         ShowCustomer scu = new ShowCustomer();
         GetCustomerCabang gc = new GetCustomerCabang();
+        CustomerList cl = new CustomerList();
         ShowTable st = new ShowTable();
 
         System.out.println("");
+        if(cl.listNull(cabang)){
+            System.out.println("There is no Customer in Cabang " + cabang);
+            System.out.println("Press enter to continue...");
+            sc.nextLine();
+            return;
+        }
+        scu.showCustomer(cabang);
+        System.out.println("\nInput 0 to go back");
         do{
-            scu.showCustomer();
             System.out.print("Input Customer ID[5 Character]: ");
             try {
                 id = sc.nextLine();
@@ -34,6 +43,12 @@ public class EditCheckOut {
         do {
             System.out.println("\n\n\nTable of " + id);
             totalTable = st.showTable(id, "IN ORDER");
+            if(totalTable == 0){
+                System.out.println("No table is IN ORDER");
+                System.out.println("Press enter to continue...");
+                sc.nextLine();
+                return;
+            }
             System.out.print("\nTable to checkout: ");
             try {
                 input = sc.nextInt();

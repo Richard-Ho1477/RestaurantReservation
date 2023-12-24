@@ -1,6 +1,7 @@
 package validation;
 import java.util.Scanner;
 
+import List.EmployeeList;
 import get.GetEmployeeCabang;
 import page.EmployeePage;
 import view.ShowEmployee;
@@ -10,10 +11,18 @@ public class CheckEmployee implements Validate{
     public void validateId(String cabang, Scanner sc){
         ShowEmployee se = new ShowEmployee();
         GetEmployeeCabang ge = new GetEmployeeCabang();
+        EmployeeList el = new EmployeeList();
         String input = "", cabangS = "";
 
         System.out.println("");
-        se.showEmployee();
+
+        if(el.listNull(cabang)){
+            System.out.println("There is no Employee in Cabang " + cabang);
+            System.out.println("Press enter to continue...");
+            sc.nextLine();
+            return;
+        }
+        se.showEmployee(cabang);
         System.out.println("\nInput 0 to go back");
         do{
             System.out.print("Input ID for vertification [5 Character]: ");

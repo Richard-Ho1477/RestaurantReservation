@@ -7,7 +7,7 @@ public class UpdateTable {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
 			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/restomanagement","root","");
-			PreparedStatement pst = con.prepareStatement("update tablelist set order = ?, status = ? where id = ? and type = ?");
+			PreparedStatement pst = con.prepareStatement("update tablelist set `order` = ?, status = ? where id = ? and type = ?");
 			pst.setString(1, order);
 			pst.setString(2, status);
             pst.setString(3, id);

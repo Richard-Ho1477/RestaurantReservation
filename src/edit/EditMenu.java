@@ -2,6 +2,7 @@ package edit;
 
 import java.util.Scanner;
 
+import List.MenuList;
 import add.AddMenu;
 import delete.DeleteMenu;
 import find.FindMenu;
@@ -14,6 +15,7 @@ public class EditMenu {
         ShowMenu sm = new ShowMenu();
         FindMenu fm = new FindMenu();
         GetMenuType gm = new GetMenuType();
+        MenuList ml = new MenuList();
         int input = 0, priceInput = 0, menuSelection = 0;
         String nameInput = "", locationInput = "", characteristicInput = "", storyInput = "", confirm = "", oldName = "";
 
@@ -112,6 +114,12 @@ public class EditMenu {
                     break;
                 }
                 case 2:{
+                    if(ml.listNull(cabang)){
+                        System.out.println("There is no menu data");
+                        System.out.println("Press enter to continue...");
+                        sc.nextLine();
+                        break;
+                    }
                     sm.showMenu(cabang);
                     do{	
                         System.out.print("Enter Menu Name To Update: ");
@@ -209,6 +217,12 @@ public class EditMenu {
                     break;
                 }
                 case 3:{
+                    if(ml.listNull(cabang)){
+                        System.out.println("There is no menu data");
+                        System.out.println("Press enter to continue...");
+                        sc.nextLine();
+                        break;
+                    }
                     sm.showMenu(cabang);
                     do{	
                         System.out.print("Enter Menu Name To Delete: ");

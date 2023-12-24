@@ -30,8 +30,9 @@ public class CustomerPage {
         GetTableType gt = new GetTableType();
         type = gt.getData(id, String.valueOf(totalTable), "IN RESERVE");
 
+        System.out.println("\n\n");
+        sm.showMenu(cabang);
         do {
-            sm.showMenu(cabang);
             do {
                 System.out.print("Input menu's name you want to order (input 0 to finish order): ");
                 try {
@@ -43,11 +44,11 @@ public class CustomerPage {
                 if(orderInput.compareTo("0") == 0) break;
             } while(!fm.findData(orderInput, cabang));
             if(orderInput.compareTo("0") == 0) break;
-            order = order.concat(","+orderInput);
+            order = order.concat(orderInput + ",");
         } while(true);
 
         UpdateTable ut = new UpdateTable();
-        ut.updateData(id, orderInput, "IN ORDER", type);
+        ut.updateData(id, order, "IN ORDER", type);
         System.out.println("Press enter to continue...");
         sc.nextLine();
 

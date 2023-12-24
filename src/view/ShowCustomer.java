@@ -3,7 +3,7 @@ package view;
 import java.sql.*;
 
 public class ShowCustomer {
-    public void showCustomer() {
+    public void showCustomer(String cabang) {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/restomanagement","root","");
@@ -13,8 +13,10 @@ public class ShowCustomer {
             System.out.printf("| %-7s | %-20s | %-10s |\n", "ID", "Name", "Cabang");
             System.out.println("-----------------------------------------------");
 			while(rs.next()) {
-				System.out.printf("| %-7s | %-20s | %-10s |\n", rs.getString("id"), rs.getString("name")
-                , rs.getString("cabang"));
+				if(cabang.compareTo(rs.getString("cabang")) == 0){
+					System.out.printf("| %-7s | %-20s | %-10s |\n", rs.getString("id"), rs.getString("name")
+					, rs.getString("cabang"));
+				}
 			}
             System.out.println("-----------------------------------------------");
             con.close();
