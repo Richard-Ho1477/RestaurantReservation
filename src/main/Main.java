@@ -19,8 +19,7 @@ public class Main {
 				System.out.println("1. Employee Page");
 				System.out.println("2. Customer Page");
 				System.out.println("3. Edit Employee List");
-				System.out.println("4. Edit Customer List");
-				System.out.println("5. Exit");
+				System.out.println("4. Exit");
 				System.out.print("Choose: ");
 				try {
 					user = sc.nextInt();
@@ -28,7 +27,7 @@ public class Main {
 					System.out.println(e);
 				}
 				sc.nextLine();
-			}while(user < 1 || user > 5);
+			}while(user < 1 || user > 4);
 
 			if(user == 1 || user == 2){
 				do{
@@ -70,8 +69,7 @@ public class Main {
 				EditEmployee ed = new EditEmployee();
 				ed.employeeEdit(sc);
 			}
-			else if(user == 4);
-			else if(user == 5) call = false;
+			else if(user == 4) call = false;
 		}while(call);
 
 		sc.close();

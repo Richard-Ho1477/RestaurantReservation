@@ -85,7 +85,7 @@ public class EditEmployee {
                             sc.nextLine();
                         }
                         if(idInput.length() != 5) continue;
-                        if(!fe.findData(idInput, "select * from employeelist")) System.out.println("Invalid ID");
+                        if(fe.findData(idInput, "select * from employeelist")) System.out.println("Invalid ID");
                     }while(fe.findData(idInput, "select * from employeelist"));
                     do{	
                         System.out.print("Input New Employee Name [3 - 20 Characters]: ");
@@ -125,7 +125,7 @@ public class EditEmployee {
                             sc.nextLine();
                         }
                         if(idInput.length() != 5) continue;
-                        if(!fe.findData(idInput, "select * from employeelist")) System.out.println("Invalid ID");
+                        if(fe.findData(idInput, "select * from employeelist")) System.out.println("Invalid ID");
                     }while(fe.findData(idInput, "select * from employeelist"));
                     DeleteEmployee de = new DeleteEmployee();
                     de.deleteData(idInput);

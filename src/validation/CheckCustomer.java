@@ -12,9 +12,11 @@ public class CheckCustomer implements Validate{
         ShowCustomer scu = new ShowCustomer();
         GetCustomerCabang gc = new GetCustomerCabang();
         String input = "", cabangS = "";
+
+        System.out.println("");
+        scu.showCustomer();
+        System.out.println("\nInput 0 to go back");
         do{
-            scu.showCustomer();
-            System.out.println("\n\n\nInput 0 to go back");
             System.out.print("Input ID for vertification [5 Character]: ");
             try {
                 input = sc.nextLine();
@@ -25,7 +27,8 @@ public class CheckCustomer implements Validate{
             if(input.compareTo("0") == 0) return;
             if(input.length() != 5) continue;
             cabangS = gc.getData(input, "select * from customerlist");
-        }while(cabangS == null);
+            if(cabangS.compareTo(cabang) != 0) System.out.println("Wrong ID for Cabang " + cabang);
+        }while(cabangS.compareTo(cabang) != 0);
         CustomerPage cp = new CustomerPage();
         cp.customerPage(cabangS, input, sc);
         return;

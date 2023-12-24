@@ -14,6 +14,7 @@ public class EmployeePage {
                 System.out.println("2. Edit Reservation");
                 System.out.println("3. Check Out");
                 System.out.println("4. Back");
+                System.out.print("Choose: ");
                 try {
                     input = sc.nextInt();
                 } catch (Exception e) {
@@ -23,12 +24,12 @@ public class EmployeePage {
             }while(input < 1 || input > 4);
             switch (input){
                 case 1:{
-                    EditReservation er = new EditReservation();
-                    er.addReservation(cabang, sc);
-                }
-                case 2:{
                     EditMenu em = new EditMenu();
                     em.menuEdit(cabang, sc);
+                }
+                case 2:{
+                    EditReservation er = new EditReservation();
+                    er.addReservation(cabang, sc);
                 }
                 case 3:{
                     EditCheckOut ec = new EditCheckOut();

@@ -16,7 +16,7 @@ public class EditReservation {
 
         System.out.println("");
         do{
-            System.out.println("Input Reservation Name [3 - 20 Character]: ");
+            System.out.print("Input Reservation Name [3 - 20 Character]: ");
             try {
                 nameInput = sc.nextLine();
             } catch (Exception e) {
@@ -29,7 +29,7 @@ public class EditReservation {
             , rd.nextInt(10),rd.nextInt(10),rd.nextInt(10));
         }while(!fc.findData(idInput, "select * from customerlist"));
         do{
-            System.out.println("Input Table Amount [1 - 5 Table]: ");
+            System.out.print("Input Table Amount [1 - 5 Table]: ");
             try {
                 nTable = sc.nextInt();
             } catch (Exception e) {
@@ -40,7 +40,7 @@ public class EditReservation {
         AddTable at = new AddTable();
         for(int i = 0;i < nTable; i++){
             do{
-                System.out.println("Input Table " +  i+1 + " Type [Romantic, General, Family]: ");
+                System.out.print("Input Table " +  i+1 + " Type [Romantic, General, Family]: ");
                 try {
                     tTypeInput = sc.nextLine();
                 } catch (Exception e) {
@@ -54,7 +54,7 @@ public class EditReservation {
             else nMax = 10;
 
             do{
-                System.out.println("Input Amount of People [Max "+nMax+" People]: ");
+                System.out.print("Input Amount of People [Max "+nMax+" People]: ");
                 try {
                     nPeople = sc.nextInt();
                 } catch (Exception e) {

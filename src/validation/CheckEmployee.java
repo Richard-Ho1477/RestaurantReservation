@@ -11,9 +11,11 @@ public class CheckEmployee implements Validate{
         ShowEmployee se = new ShowEmployee();
         GetEmployeeCabang ge = new GetEmployeeCabang();
         String input = "", cabangS = "";
+
+        System.out.println("");
+        se.showEmployee();
+        System.out.println("\nInput 0 to go back");
         do{
-            se.showEmployee();
-            System.out.println("\n\n\nInput 0 to go back");
             System.out.print("Input ID for vertification [5 Character]: ");
             try {
                 input = sc.nextLine();
@@ -24,7 +26,8 @@ public class CheckEmployee implements Validate{
             if(input.compareTo("0") == 0) return;
             if(input.length() != 5) continue;
             cabangS = ge.getData(input, "select * from employeelist");
-        }while(cabangS == null);
+            if(cabangS.compareTo(cabang) != 0) System.out.println("Wrong ID for Cabang " + cabang);
+        }while(cabangS.compareTo(cabang) != 0);
         EmployeePage ep = new EmployeePage();
         ep.employeePage(cabangS, sc);
         return;
