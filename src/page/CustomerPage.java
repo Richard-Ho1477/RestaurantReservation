@@ -19,6 +19,12 @@ public class CustomerPage {
         do {
             System.out.println("\n\n\nYour Table");
             totalTable = st.showTable(id, "IN RESERVE");
+            if(totalTable == 0){
+                System.out.println("No table is IN ORDER");
+                System.out.println("Press enter to continue...");
+                sc.nextLine();
+                return;
+            }
             System.out.print("\nTable to order: ");
             try {
                 input = sc.nextInt();
@@ -33,19 +39,16 @@ public class CustomerPage {
         System.out.println("\n\n");
         sm.showMenu(cabang);
         do {
-            do {
-                System.out.print("Input menu's name you want to order (input 0 to finish order): ");
-                try {
-                    orderInput = sc.nextLine();
-                } catch (Exception e) {
-                    System.out.println(e);
-                    sc.nextLine();
-                }
-                if(orderInput.compareTo("0") == 0) break;
-            } while(!fm.findData(orderInput, cabang));
+            System.out.print("Input menu's name you want to order (input 0 to finish order): ");
+            try {
+                orderInput = sc.nextLine();
+            } catch (Exception e) {
+                System.out.println(e);
+                sc.nextLine();
+            }
             if(orderInput.compareTo("0") == 0) break;
             order = order.concat(orderInput + ",");
-        } while(true);
+        } while(!fm.findData(orderInput, cabang));
 
         UpdateTable ut = new UpdateTable();
         ut.updateData(id, order, "IN ORDER", type);
