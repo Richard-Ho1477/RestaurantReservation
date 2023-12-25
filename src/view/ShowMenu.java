@@ -25,7 +25,6 @@ public class ShowMenu {
                     else{
                         System.out.println(i + ". Menu Name: " + rs.getString("name") + ", Price: " + rs.getInt("price"));
                     }
-                    System.out.println("");
                 }
 			}
             con.close();

@@ -14,7 +14,6 @@ public class GetPrice {
                     return rs.getInt("price");
                 }
             }
-            System.out.println("Invalid Name");
             return 0;
         } catch (Exception e) {
             System.out.println(e);

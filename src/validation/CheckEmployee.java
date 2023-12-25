@@ -1,7 +1,6 @@
 package validation;
-import java.util.Scanner;
 
-import List.EmployeeList;
+import java.util.Scanner;
 import get.GetEmployeeCabang;
 import page.EmployeePage;
 import view.ShowEmployee;

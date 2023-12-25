@@ -1,8 +1,6 @@
 package validation;
 
 import java.util.Scanner;
-
-import List.CustomerList;
 import get.GetCustomerCabang;
 import page.CustomerPage;
 import view.ShowCustomer;

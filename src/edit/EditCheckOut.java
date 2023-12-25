@@ -2,7 +2,7 @@ package edit;
 
 import java.util.Scanner;
 
-import List.CustomerList;
+import validation.CustomerList;
 import get.GetCustomerCabang;
 import get.GetTableType;
 import update.UpdateStatus;
@@ -65,6 +65,7 @@ public class EditCheckOut {
         System.out.println("Press enter to continue...");
         sc.nextLine();
 
+        System.out.println("\nYour Bill:");
         ShowBill sb = new ShowBill();
         sb.showBill(id,type,cabang);
         System.out.println("Press enter to continue...");

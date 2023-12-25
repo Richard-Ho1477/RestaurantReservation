@@ -2,7 +2,7 @@ package edit;
 
 import java.util.Scanner;
 
-import List.MenuList;
+import validation.MenuList;
 import add.AddMenu;
 import delete.DeleteMenu;
 import find.FindMenu;

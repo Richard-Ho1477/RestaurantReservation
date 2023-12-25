@@ -20,7 +20,7 @@ public class CustomerPage {
             System.out.println("\n\n\nYour Table");
             totalTable = st.showTable(id, "IN RESERVE");
             if(totalTable == 0){
-                System.out.println("No table is IN ORDER");
+                System.out.println("No table is IN RESERVE");
                 System.out.println("Press enter to continue...");
                 sc.nextLine();
                 return;
@@ -38,6 +38,7 @@ public class CustomerPage {
 
         System.out.println("\n\n");
         sm.showMenu(cabang);
+        System.out.println("");
         do {
             System.out.print("Input menu's name you want to order (input 0 to finish order): ");
             try {

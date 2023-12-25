@@ -1,4 +1,4 @@
-package List;
+package validation;
 
 import java.sql.*;
 
@@ -9,7 +9,6 @@ public class MenuList{
 			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/restomanagement","root","");
 			Statement stmt = con.createStatement();
 			ResultSet rs = stmt.executeQuery("select * from menulist");
-            if(!rs.next()) return true;
             while(rs.next()){
                 if(cabang.compareTo(rs.getString("cabang")) == 0) return false;
             }

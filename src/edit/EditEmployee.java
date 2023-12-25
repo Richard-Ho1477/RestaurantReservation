@@ -3,7 +3,7 @@ package edit;
 import java.util.Random;
 import java.util.Scanner;
 
-import List.EmployeeList;
+import validation.EmployeeList;
 import add.AddEmployee;
 import delete.DeleteEmployee;
 import find.FindEmployee;
