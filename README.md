@@ -1,10 +1,10 @@
 # Laporan Pengerjaan Proyek RestaurantReservation
 
 Keisha Natasya Ghazali - 2602080895
-- membuat main menu berisikan employee, customer, heckemployee, checkcustomer
-- membuat class employee
-- membuat class menu dan localmenu, specialmenu
-- membuat validasi checkcustomer dan checkemployee
+- Membuat main menu berisikan employee, customer, heckemployee, checkcustomer
+- Membuat class employee
+- Membuat class menu dan localmenu, specialmenu
+- Membuat validasi checkcustomer dan checkemployee
 
 Nelvina Patricia Kompoi - 2602051491
 - Membuat object table & entity
@@ -23,3 +23,9 @@ Vincent Hartono - 2602103425
 - Menambahkan EditMenu
 
 Richard Ho - 2602105456
+- Mengatur flow project
+- Membuat database SQL
+- Membuat struktur class and package
+- Fixed beberapa codingan dari file file tertentu
+- Membuat UpdateMenu, DeleteMenu, UpdateStatus, CheckOut, GetOrder, ShowBill, GetPrice, dll
+- Debugging seluruh project
